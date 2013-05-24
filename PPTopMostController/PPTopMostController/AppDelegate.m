@@ -25,7 +25,13 @@
     UITabBarItem *tb2 = [[UITabBarItem alloc] initWithTitle:@"Simple" image:nil tag:1];
     m2.tabBarItem = tb2;
     
-    [tabbar setViewControllers:@[n1, m2]];
+    MainViewController *m3 = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    UINavigationController *n3 = [[UINavigationController alloc] initWithRootViewController:m3];
+    PPRevealSideViewController *r3 = [[PPRevealSideViewController alloc] initWithRootViewController:n3];
+    UITabBarItem *tb3 = [[UITabBarItem alloc] initWithTitle:@"PPReveal" image:nil tag:0];
+    r3.tabBarItem = tb3;
+    
+    [tabbar setViewControllers:@[n1, m2, r3]];
     
     self.window.rootViewController = tabbar;
     

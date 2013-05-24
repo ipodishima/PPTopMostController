@@ -34,10 +34,22 @@
     if (_isModal) {
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(dismiss)];
     }
+    
+    if (self.revealSideViewController) {
+        UIViewController *rightController = [UIViewController new];
+        [self.revealSideViewController preloadViewController:rightController forSide:PPRevealSideDirectionRight];
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStyleBordered target:self action:@selector(showRight)];
+    }
 }
 
 - (void)dismiss {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void) showRight
+{
+    [self.revealSideViewController pushOldViewControllerOnDirection:PPRevealSideDirectionRight animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

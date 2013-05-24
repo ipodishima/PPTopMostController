@@ -22,6 +22,8 @@
 		E003B3AA174FB463002644A7 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E003B3A8174FB463002644A7 /* MainViewController.m */; };
 		E003B3AB174FB463002644A7 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E003B3A9174FB463002644A7 /* MainViewController.xib */; };
 		E003B3AE174FB8EC002644A7 /* NotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E003B3AD174FB8EC002644A7 /* NotificationView.m */; };
+		E003B3B2174FC491002644A7 /* PPRevealSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E003B3B1174FC491002644A7 /* PPRevealSideViewController.m */; };
+		E003B3B7174FC4C3002644A7 /* PPRevealSideViewController+PPTopMostController.m in Sources */ = {isa = PBXBuildFile; fileRef = E003B3B6174FC4C2002644A7 /* PPRevealSideViewController+PPTopMostController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,10 @@
 		E003B3A9174FB463002644A7 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		E003B3AC174FB8EB002644A7 /* NotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationView.h; sourceTree = "<group>"; };
 		E003B3AD174FB8EC002644A7 /* NotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationView.m; sourceTree = "<group>"; };
+		E003B3B0174FC490002644A7 /* PPRevealSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPRevealSideViewController.h; path = vendor/PPRevealSideViewController/PPRevealSideViewController/PPRevealSideviewController/PPRevealSideViewController.h; sourceTree = SOURCE_ROOT; };
+		E003B3B1174FC491002644A7 /* PPRevealSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPRevealSideViewController.m; path = vendor/PPRevealSideViewController/PPRevealSideViewController/PPRevealSideviewController/PPRevealSideViewController.m; sourceTree = SOURCE_ROOT; };
+		E003B3B5174FC4C2002644A7 /* PPRevealSideViewController+PPTopMostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PPRevealSideViewController+PPTopMostController.h"; sourceTree = "<group>"; };
+		E003B3B6174FC4C2002644A7 /* PPRevealSideViewController+PPTopMostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PPRevealSideViewController+PPTopMostController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				E003B3A9174FB463002644A7 /* MainViewController.xib */,
 				E003B3AC174FB8EB002644A7 /* NotificationView.h */,
 				E003B3AD174FB8EC002644A7 /* NotificationView.m */,
+				E003B3B5174FC4C2002644A7 /* PPRevealSideViewController+PPTopMostController.h */,
+				E003B3B6174FC4C2002644A7 /* PPRevealSideViewController+PPTopMostController.m */,
+				E003B3B3174FC499002644A7 /* Vendor */,
 				E003B396174FB0EE002644A7 /* PPTopMostController */,
 				E003B37E174FB03D002644A7 /* Supporting Files */,
 			);
@@ -135,6 +144,23 @@
 				E003B3A4174FB1D1002644A7 /* UIViewController+PPTopMostController.m */,
 			);
 			name = PPTopMostController;
+			sourceTree = "<group>";
+		};
+		E003B3B3174FC499002644A7 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				E003B3B4174FC4A8002644A7 /* PPRevealSideViewController */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		E003B3B4174FC4A8002644A7 /* PPRevealSideViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E003B3B0174FC490002644A7 /* PPRevealSideViewController.h */,
+				E003B3B1174FC491002644A7 /* PPRevealSideViewController.m */,
+			);
+			name = PPRevealSideViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +236,8 @@
 				E003B3A6174FB1D1002644A7 /* UIViewController+PPTopMostController.m in Sources */,
 				E003B3AA174FB463002644A7 /* MainViewController.m in Sources */,
 				E003B3AE174FB8EC002644A7 /* NotificationView.m in Sources */,
+				E003B3B2174FC491002644A7 /* PPRevealSideViewController.m in Sources */,
+				E003B3B7174FC4C3002644A7 /* PPRevealSideViewController+PPTopMostController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

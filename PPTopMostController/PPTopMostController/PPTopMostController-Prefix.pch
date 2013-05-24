@@ -11,6 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-#import "NotificationView.h"
+    #import "NotificationView.h"
 
+    #import "PPRevealSideViewController+PPTopMostController.h"
 #endif
