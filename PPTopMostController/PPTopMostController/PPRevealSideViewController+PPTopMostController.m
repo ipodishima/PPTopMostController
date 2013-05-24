@@ -10,8 +10,7 @@
 
 @implementation PPRevealSideViewController (PPTopMostController)
 
-- (UIViewController *)visibleViewController
-{
+- (UIViewController *)visibleViewController {
     return self.rootViewController;
 }
 

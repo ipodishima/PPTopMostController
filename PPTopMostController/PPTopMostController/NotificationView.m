@@ -106,7 +106,7 @@ void drawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor
 
 - (CGFloat)_getFinalOrigin {
     UIViewController *c = [UIViewController topMostController];
-    CGFloat finalOrigin = c.navigationController ? 44.0 /*Toolbar height*/ + (c.revealSideViewController ? 0.0/* "bug" with full screen status bar and PPReveal*/ : 20.0) /*Status bar height*/ : 0.0;
+    CGFloat finalOrigin = c.navigationController ? 44.0 /*Toolbar height*/ + (c.revealSideViewController ? 0.0 /* "bug" with full screen status bar and PPReveal*/ : 20.0) /*Status bar height*/ : 0.0;
     return finalOrigin;
 }
 

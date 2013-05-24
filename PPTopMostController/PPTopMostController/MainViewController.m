@@ -47,8 +47,7 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-- (void) showRight
-{
+- (void)showRight {
     [self.revealSideViewController pushOldViewControllerOnDirection:PPRevealSideDirectionRight animated:YES];
 }
 
