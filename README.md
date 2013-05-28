@@ -77,7 +77,8 @@ $ git submodule update --init --recursive
 
 2. In your XCode Project, take all the files from PPTopMostController-Files folder and drag them into your project. 
 3. Import *UIViewController+PPTopMostController.h* file to your PCH file or your AppDelegate file.
-4. Start using this new controller!
+
+You are ready to go.
 
 # ARC Support
 
@@ -114,6 +115,93 @@ There is an example with [PPRevealSideViewController](https://github.com/ipup/PP
     }
 
 That's it!
+
+# Why PPTopMostController?
+Let's take the case where you have for example a manager which downloads data + a view which triggers notification when an error occured.
+
+## Using a delegate
+
+(This would be quite the same idea with completion block)
+You would declare a protocol
+   
+    @protocol DLManagerDelegate
+    - (void) dlManager:(DLManager*)manager didFailWithError:(NSError*)error;
+    @end
+
+And create a property for the delegate
+
+    @property (nonatomic, weak) id<DLManagerDelegate> delegate;
+    
+In each controller, you would adopt the protocol
+
+    @interface AController : UIViewController <DLManagerDelegate>
+    
+And implement the method
+
+    - (void) dlManager:(DLManager*)manager didFailWithError:(NSError*)error
+    {
+        [NotificationView showFromController:self ...];
+    }
+    
+Tell the delegate when failing
+
+    - (void) weFail:(NSError*)error
+    {
+        [self.delegate dlManager:self didFailWithError:error];
+    }
+    
+Plus managed the thing that if you change the controller displayed, reassign correctly the delegate
+
+    [[DLManager shared] setDelegate:self];
+    
+**Boring**
+
+## Using notifications
+
+You would declare the notification
+
+    extern NSString *const DLManagerDidFailNotification;
+
++
+
+    NSString *const DLManagerDidFailNotification = @"DLManagerDidFailNotification";
+    
+Post it when failing
+
+    - (void) weFail:(NSError*)error
+    {
+        NSDictionary *userInfo = @{@"error": error};
+        [[NSNotificationCenter defaultCenter] postNotificationName:DLManagerDidFailNotification object:nil userInfo:userInfo];
+    }
+    
+And in each controller, you add observer
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(dispatchNotificationFail:)
+                                                     name:DLManagerDidFailNotification
+                                                   object:nil];   
+                                                   
+Don't forget to remove the observer
+
+And implement the method
+
+    - (void) dispatchNotificationFail:(NSNotification*)notif
+    {
+        [NotificationView showFromController:self ...];
+    }
+
+**Boring**
+
+## Using PPTopMostController
+
+Just implement the method `weFail:` from DLManager
+
+    - (void) weFail:(NSError*)error
+    {
+        [NotificationView showFromController:[UIViewController topMostController] ...];
+    }
+
+**Not boring**
 
 License
 -------
