@@ -75,7 +75,7 @@ $ git submodule add git@github.com:ipodishima/PPTopMostController.git vendor/PPT
 $ git submodule update --init --recursive
 ```
 
-2. In your XCode Project, take all the files from PPTopMostController-Files folder and drag them into your project. 
+2. In your Xcode Project, take all the files from PPTopMostController-Files folder and drag them into your project. 
 3. Import *UIViewController+PPTopMostController.h* file to your PCH file or your AppDelegate file.
 
 You are ready to go.
